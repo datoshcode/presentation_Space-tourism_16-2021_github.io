@@ -1,0 +1,724 @@
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+/* Подключение локальных шрифтов с ./fonts /BEGIN-CODE */
+/* font-family: "SF-Pro-Display"; (Regular) */
+@font-face {
+  font-family: 'SF-Pro-Display';
+  font-weight: 400;
+
+  src: url('../fonts/SF-Pro-Display-Regular.woff2') format('woff2'),
+  url('../fonts/SF-Pro-Display-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+/* font-family: "SF-Pro-Display" (Bold) */
+@font-face {
+  font-family: 'SF-Pro-Display';
+  font-weight: 700;
+
+  src: url('../fonts/SF-Pro-Display-Bold.woff2') format('woff2'),
+  url('../fonts/SF-Pro-Display-Bold.woff') format('woff');
+  font-display: swap;
+}
+
+/* font-family: "Space-Age-Cyrillic"; (Regular) */
+@font-face {
+  font-family: 'Space-Age-Cyrillic';
+  font-weight: 400;
+
+  src: url('../fonts/spaceagecyrillic-regular.woff2') format('woff2'),
+  url('../fonts/spaceagecyrillic-regular.woff') format('woff');
+  font-display: swap;
+}
+
+/* font-family: "Roboto"; (Regular) */
+@font-face {
+  font-family: 'Roboto';
+  font-weight: 400;
+
+  src: url('../fonts/Roboto.woff2') format('woff2'),
+  url('../fonts/Roboto.woff') format('woff');
+  font-display: swap;
+}
+/* Подключение локальных шрифтов с ./fonts /END-CODE */
+
+/* Общие свойства для ссылок */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Общие свойства для button */
+button {
+  cursor: pointer;
+  color: inherit;
+  border: none;
+  background-color: transparent;
+}
+
+/* Общие свойства для body */
+body {
+  font-family: 'SF-Pro-Display';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  color: #fff;
+}
+
+.title {
+  font-family: 'Space-Age-Cyrillic';
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 48px;
+  padding: 100px 0;
+}
+
+/* Общие свойства для контейнера */
+.container {
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.button {
+  font-size: 18px;
+  line-height: 21px;
+  padding: 20px 45px;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+}
+
+/*  Header /BEGIN-CODE */
+.header {
+  background-image: url(../images/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.header__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+.header__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 75px 0 30px;
+}
+
+/* Меню  /BEGIN-CODE */
+.menu__list {
+  display: flex;
+}
+
+.menu__item {
+  margin-right: 30px;
+}
+
+.menu__link {
+  font-size: 18px;
+  line-height: 21px;
+  transition: color .5s;
+  text-transform: uppercase;
+}
+
+.menu__link:hover {
+  color: #cb0e0e;
+}
+
+/* Меню для адаптива BEGIN-CODE */
+.menu-btn {
+  position: relative;
+  z-index: 20;
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+/* Центральная линия Меню */
+.menu-btn span {
+  position: relative;
+  display: block;
+  width: inherit;
+  height: 2px;
+  background-color: #fff;
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+  position: absolute;
+  left: 0;
+  width: inherit;
+  height: 2px;
+  content: '';
+  background-color: #fff;
+}
+
+/* Верхняя линия Меню */
+.menu-btn span::before {
+  top: -10px;
+}
+
+/* Нижняя линия Меню */
+.menu-btn span::after {
+  top: 10px;
+}
+/* Меню для адаптива END-CODE */
+
+.phone {
+  font-size: 24px;
+  line-height: 29px;
+  margin-left: auto;
+}
+
+.login {
+  margin-right: 134px;
+  margin-left: 22px;
+}
+/* Меню  /END-CODE */
+
+.header__content {
+  max-width: 600px;
+}
+
+/* Заголовок */
+.header__title {
+  font-family: 'Space-Age-Cyrillic';
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 60px;
+  margin-bottom: 20px;
+}
+
+.header__title span {
+  font-size: 110px;
+}
+
+/* Подзаголовки */
+.header__text {
+  font-size: 24px;
+  line-height: 29px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+/* Кнопка "Хочу быть космонавтом!" */
+.header__btn {
+  font-size: 24px;
+  line-height: 29px;
+  width: 100%;
+  padding: 15px 10px;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+}
+
+/* Описание */
+.header__description {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  margin-bottom: 5%;
+}
+
+.header__description-text {
+  font-size: 14px;
+  line-height: 17px;
+  width: 165px;
+}
+
+.header__description-text + .header__description-text {
+  margin-left: 52px;
+}
+/*  Header /END-CODE */
+
+/* О нас /BEGIN-CODE */
+.about {
+  background-image: url(../images/about-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.about__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 150px;
+}
+
+/* Расположение изображения для нечетного элемента */
+.about__item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.about__img {
+  max-width: 100%;
+}
+
+.about__content {
+  width: 600px;
+}
+
+.about__content-title {
+  font-size: 30px;
+  line-height: 36px;
+  margin-bottom: 5px;
+}
+
+.about__content-subtitle {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  color: #7dbef7;
+}
+
+.about__content-text {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.about__content-text p {
+  width: 165px;
+}
+
+.about__table {
+  margin-bottom: 50px;
+}
+
+.about__table-tr {
+  border: 1px solid #fff;
+  border-right: none;
+  border-left: none;
+}
+
+.about__table-tr + .about__table-tr {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 43px;
+  text-align: center;
+}
+
+.about__table-td {
+  padding: 10px 30px 10px 0;
+}
+
+.about__table-td span {
+  font-size: 14px;
+  line-height: 17px;
+  display: block;
+}
+
+.about__table-note {
+  font-size: 12px;
+  line-height: 14px;
+  margin-top: -30px;
+  margin-bottom: 50px;
+  color: #e5e5e5;
+}
+/* О нас /END-CODE */
+
+/* Как все происходит /BEGIN-CODE */
+.how-to {
+  padding-bottom: 100px;
+  background-image: url(../images/howto-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.how-to__box {
+  text-align: center;
+}
+
+.how-to__box-list {
+  display: none;
+}
+
+.how-to__box circle,
+.how-to__box text,
+foreignobject {
+  font-size: 18px;
+  cursor: pointer;
+  transition: all .5s;
+}
+
+.how-to__box g:hover circle {
+  fill: #7dbef7;
+  r: 20px;
+}
+
+.how-to__box g:hover text {
+  font-size: 36px;
+  line-height: 43px;
+  fill: #7dbef7;
+}
+
+.how-to__box g:hover foreignobject {
+  font-size: 22px;
+  color: #7dbef7;
+}
+
+foreignobject {
+  text-align: left;
+}
+
+foreignobject .text-right {
+  text-align: right;
+}
+/* Как все происходит /END-CODE */
+
+/* Успей заброникровать /BEGIN-CODE */
+.to-book {
+  min-height: 100vh;
+  background-image: url(../images/tobook-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.to-book__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.to-book__text {
+  font-size: 14px;
+  line-height: 17px;
+  width: 165px;
+  margin-top: 100px;
+  margin-right: 52px;
+  margin-left: auto;
+}
+
+.to-book__text + .to-book__text {
+  margin-right: 0;
+  margin-left: 0;
+}
+/* Успей заброникровать /END-CODE */
+
+/* Спец. предложение /BEGIN-CODE  */
+.info {
+  padding-bottom: 100px;
+  background-image: url(../images/info-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.special-offer__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.special-offer__item {
+  width: 500px;
+}
+/* Блок с контентом */
+.special-offer__item-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 400px;
+  margin-bottom: 25px;
+  padding: 40px 75px;
+  text-align: center;
+  border: 1px solid #fff;
+}
+
+.special-offer__item-text {
+  font-size: 24px;
+  line-height: 29px;
+  width: 236px;
+  margin: 0 auto;
+}
+
+.special-offer__item-text span {
+  color: #cb0e0e;
+}
+
+/* Старая цена */
+.special-offer__old-price {
+  font-size: 14px;
+  line-height: 17px;
+  position: relative;
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+/* Декоративная красная линия, перечеркивающая старую цену */
+.special-offer__old-price::before {
+  position: absolute;
+  top: 7px;
+  right: 0;
+  width: 68px;
+  height: 1px;
+  content: '';
+  transform: rotate(15deg);
+  background-color: #cb0e0e;
+}
+
+/* Новая цена */
+.special-offer__new-price {
+  font-size: 48px;
+  line-height: 57px;
+}
+
+.special-offer__btn {
+  width: 100%;
+}
+/* Спец. предложение /END-CODE  */
+
+/* Дополнительные услуги /BEGIN-CODE  */
+.services {
+  padding-bottom: 200px;
+}
+
+.services__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.services__box-list {
+  font-size: 24px;
+  line-height: 29px;
+  width: 620px;
+  margin-right: 80px;
+}
+
+.services__list-title {
+  margin-bottom: 25px;
+}
+
+.services__list {
+  margin-bottom: 25px;
+  list-style: none;
+}
+
+.services__list-item {
+  position: relative;
+  padding-left: 36px;
+}
+
+.services__list-item::before {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: '';
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.services__note {
+  font-size: 12px;
+  line-height: 14px;
+  color: #e5e5e5;
+}
+
+.services__buttons {
+  width: 500px;
+}
+
+.services__btn {
+  width: 100%;
+}
+
+.services__btn--first {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+/* Астронавт-фотограф */
+.services__btn--first::before {
+  position: absolute;
+  right: 0;
+  bottom: 43px;
+  width: 192px;
+  height: 150px;
+  content: '';
+  background-image: url(../images/photographer.png);
+  background-repeat: no-repeat;
+}
+/* Дополнительные услуги /END-CODE  */
+
+/* Слайдер /BEGIN-CODE  */
+.slider {
+  text-align: center;
+}
+
+.slider__inner {
+  margin-bottom: 50px;
+  padding: 100px 0;
+  border: 1px solid #fff;
+}
+
+.slider__description {
+  font-family: 'Space-Age-Cyrillic';
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.slider__box-img {
+  margin: 0 auto;
+}
+
+.slider__arrow {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  cursor: pointer;
+}
+
+.slider__arrow-left {
+  left: 75px;
+}
+
+.slider__arrow-right {
+  right: 75px;
+}
+/* Слайдер /END-CODE  */
+
+/* Форма заказа билетов BEGIN-CODE */
+.contacts {
+  padding-bottom: 100px;
+  background-color: #010203;
+}
+
+.contacts__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contacts__box {
+  width: 500px;
+}
+
+.contacts__title {
+  padding-bottom: 46px;
+}
+
+.contacts__box-text {
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 80px;
+}
+
+.contacts__form-input {
+  font-family: 'SF-Pro-Display';
+  font-size: 14px;
+  line-height: 17px;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  padding: 10px 10px 10px 0;
+  color: #fff;
+  border: none;
+  border-bottom: 1px solid #fff;
+  background-color: transparent;
+}
+
+.contacts__form-input::placeholder {
+  font-family: 'SF-Pro-Display';
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+}
+
+.contacts__btn {
+  width: 100%;
+  margin-top: 70px;
+}
+
+.contacts__gaurantees {
+  width: 500px;
+}
+
+.contacts__blockquote {
+  font-family: 'SF-Pro-Display';
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.blockquote {
+  padding-bottom: 20px;
+}
+
+.contacts__gaurantees-img {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  margin-left: auto;
+}
+/* Форма заказа билетов END-CODE */
+
+/* footer BEGIN-CODE */
+.footer {
+  padding: 100px 0 150px;
+  background-image: url(../images/footer-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+
+.footer__inner {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer__text {
+  font-family: 'Roboto';
+  width: 165px;
+  margin-right: 50px;
+}
+
+.footer__text p + p {
+  margin-top: 50px;
+}
+
+.footer__menu {
+  width: 120px;
+  margin-right: 95px;
+  list-style: none;
+}
+
+.footer__links {
+  width: 165px;
+  list-style: none;
+}
+
+.footer__menu-item,
+.footer__links-item {
+  margin-bottom: 20px;
+}
+
+.footer__menu-link,
+.footer__links-link {
+  transition: color .5s ;
+  text-transform: uppercase;
+}
+
+.footer__menu-link:hover,
+.footer__links-link:hover {
+  color: #cb0e0e;
+}
+/* footer END-CODE */
